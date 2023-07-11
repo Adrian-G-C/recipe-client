@@ -8,26 +8,49 @@ export const Auth = () => {
         </div>
     );
 };
-
+ 
 const Login = () => {
-    return <div></div>;
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    return (
+        <Form 
+        username={username} 
+        setUsername={setUsername}
+        password={password}
+        setPassword={setPassword}
+        label="Login"
+        />
+    );
 };
 
 const Register = () => {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
+    return (
+        <Form 
+    username={username} 
+    setUsername={setUsername}
+    password={password}
+    setPassword={setPassword}
+    label="Register"
+    />
+    );
+};
 
-    return <div className="auth-container">
+const Form = ({username, setUsername, password, setPassword, label }) => {
+    return (
+        <div className="auth-container">
         <form>
-            <h2> Register </h2>
+            <h2> {label} </h2>
             <div className="form-group">
                 <label htmlFor="username"> Username: </label>
                 <input 
                 type="text" 
                 id="username"
                 value={username} 
-                onChange={(event) => setUsername(event.target.value) }/>
+                onChange={ (event) => setUsername(event.target.value) }/>
             </div>
             <div className="form-group">
                 <label htmlFor="password"> Password: </label>
@@ -35,8 +58,10 @@ const Register = () => {
                 type="text" 
                 id="password"
                  value={password}
-                onChange={(event) => setPassword(event.target.value) }/>
+                onChange={ (event) => setPassword(event.target.value) }/>
             </div>
+            <button type="submit"> {label}</button>
         </form>
-    </div>;
+    </div>
+    );
 };
