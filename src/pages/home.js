@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGetUserID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../hooks/useGetUserID.js";
 import axios from "axios";
 
 export const Home = () => {
