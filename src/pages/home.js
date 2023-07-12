@@ -35,7 +35,7 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("http://localhost:3001/recipes", {
+      const response = await axios.put("https://project3-recipeapp-848a22926a42.herokuapp.com/recipes", {
         recipeID,
         userID,
       });

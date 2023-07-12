@@ -40,7 +40,7 @@ export const CreateRecipe = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3001/recipes",
+        "https://project3-recipeapp-848a22926a42.herokuapp.com/recipes",
         { ...recipe },
         {
           headers: { authorization: cookies.access_token },
